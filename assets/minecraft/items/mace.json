@@ -1,0 +1,42 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:component",
+    "predicate": "minecraft:enchantments",
+    "value": [
+      {
+        "enchantments": "minecraft:breach",
+        "levels": {
+          "min": 1,
+          "max": 4
+        }
+      }
+    ],
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "cm:item/breach"
+    },
+    "on_false": {
+      "type": "minecraft:condition",
+      "property": "minecraft:component",
+      "predicate": "minecraft:enchantments",
+      "value": [
+        {
+          "enchantments": "minecraft:density",
+          "levels": {
+            "min": 1,
+            "max": 5
+          }
+        }
+      ],
+      "on_true": {
+        "type": "minecraft:model",
+        "model": "cm:item/density"
+      },
+      "on_false": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/mace"
+      }
+    }
+  }
+}
